@@ -169,12 +169,13 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
     target_link_libraries(datastor_utils "${boostdir}boost_regex-vc141-mt-gd-x64-1_68.lib")
     target_link_libraries(datastor_utils "${boostdir}boost_thread-vc141-mt-gd-x64-1_68.lib")
     target_link_libraries(datastor_utils "${boostdir}boost_chrono-vc141-mt-gd-x64-1_68.lib")
-    target_link_libraries(datastor_utils aio)
 endif()
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     add_library(datastor_utils SHARED ${SOURCE_FILES} ${LOG_FILES} )
     target_link_libraries(datastor_utils boost_system boost_date_time boost_thread)
+    target_link_libraries(datastor_utils aio)
 endif()
+
 
 set_target_properties(datastor_utils PROPERTIES LINKER_LANGUAGE CXX)
 add_executable(test_function functions/test_functions.cpp algo/test_block_io_set.cpp algo/test_block_io_set.h)
@@ -312,4 +313,4 @@ include (CPack)
 endif ()
 
 
-add_subdirectory(ut)
+#add_subdirectory(ut)
