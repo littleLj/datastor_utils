@@ -90,7 +90,21 @@ set(SOURCE_FILES
         algo/test_algo_device.h algo/test_algo_device.cpp
         algo/algo_interface.h algo/algo_interface.cpp
         algo/debug.h algo/debug.cpp
-        README.md functions/lt_function/lt_safe_set.h algo/test_block_io_set.cpp algo/test_block_io_set.h algo/algo_sections.cpp algo/algo_sections.h algo/algo_bitmap.cpp algo/algo_bitmap.h algo/algo_bitmaps.cpp algo/algo_bitmaps.h data/lt_data/lt_stack.h)
+        functions/lt_function/lt_safe_set.h
+        algo/test_block_io_set.cpp
+        algo/test_block_io_set.h
+        algo/algo_sections.cpp
+        algo/algo_sections.h
+        algo/algo_bitmap.cpp
+        algo/algo_bitmap.h
+        algo/algo_bitmaps.cpp
+        algo/algo_bitmaps.h
+        data/lt_data/lt_stack.h
+
+        algo/libaio_device_server.cpp
+        algo/libaio_device.cpp
+        algo/algo_aio_device.cpp
+        algo/algo_aio_device.h)
 
 set(LOG_FILES
         log/src/ss_logger.h
@@ -225,6 +239,7 @@ INSTALL(FILES algo/algo.h
         algo/test_algo_device.h
         algo/test_block_io_set.h
         algo/debug.h
+
         DESTINATION ${include_dir}/algo)
 
 INSTALL(FILES conf/awe_conf/env.h DESTINATION  ${include_dir}/awe_conf)
@@ -296,4 +311,4 @@ include (CPack)
 endif ()
 
 
-#add_subdirectory(ut)
+add_subdirectory(ut)
