@@ -12,8 +12,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <inttypes.h>
-
-#include "thread_pool.hpp"
+#include <lt_function/thread_pool.hpp>
 
 #define ALIGN_SIZE  512
 
@@ -52,7 +51,7 @@ private:
     io_context_t *libaio_context;
     std::atomic_int pending_size;
     libaio_device_service *device_service;
-    thread_pool threads;
+    data_channel::thread_pool threads;
 
 public:
     libaio_device(std::string dev_path, int max_event_num,

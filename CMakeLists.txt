@@ -100,7 +100,6 @@ set(SOURCE_FILES
         algo/algo_bitmaps.cpp
         algo/algo_bitmaps.h
         data/lt_data/lt_stack.h
-
         algo/libaio_device_server.cpp
         algo/libaio_device.cpp
         algo/algo_aio_device.cpp
